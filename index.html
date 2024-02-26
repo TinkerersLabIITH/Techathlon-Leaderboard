@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Techathlon Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lboard_mem {
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .lboard_mem:hover {
+            transform: scale(1.1);
+            z-index: 1;
+            
+        }
+
+        .lboard_mem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: yellow;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            animation: backgroundAnimation 10s infinite alternate; /* Adding animation */
+        }
+
+        .lboard_mem:hover::before {
+            opacity: 1;
+            
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="lboard_section">
+        <div class="lboard_tabs">
+            <div class="tabs">
+                <ul>
+                    <li data-li="today">Software</li>
+                    <li class="active" data-li="month">Hardware</li>
+                    <li data-li="year">Total</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="lboard_wrap" id="leaderboard">
+            <div class="lboard_item today"> <!-- For Software -->
+                <!-- Leaderboard items for Software (today) -->
+            </div>
+            <div class="lboard_item month active"> <!-- For Hardware -->
+                <!-- Leaderboard items for Hardware (month) -->
+            </div>
+            <div class="lboard_item year"> <!-- For Total -->
+                <!-- Leaderboard items for Total (year) -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+<script>
+    // Function to update scores
+    function updateScores(category) {
+        const lboardItem = document.querySelector(`.lboard_item.${category}`);
+
+        // Check if lboardItem is null
+        if (lboardItem) {
+            const filteredData = data[category]; // Filtered data based on category
+            const leaderboardHTML = filteredData.map((entry, index) => `
+                <div class="lboard_mem">
+                    <span>${index + 1}</span>
+                    <span class="name_bar">${entry.name}</span>
+                    <span>${entry.score}</span>
+                </div>
+            `).join('');
+
+            lboardItem.innerHTML = leaderboardHTML;
+        } else {
+            console.error('Error: Cannot find leaderboard item for category:', category);
+        }
+    }
+
+    // Function to fetch data for a category
+    function fetchData() {
+        fetch('leaderboard.json')
+            .then(response => response.json())
+            .then(jsonData => {
+                data = jsonData; // Store the JSON data
+                const activeTab = document.querySelector('.lboard_tabs .tabs ul li.active');
+                const category = activeTab.getAttribute('data-li');
+                updateScores(category);
+            })
+            .catch(error => console.error('Error fetching leaderboard data:', error));
+    }
+
+    // Fetch initial data
+    let data = {}; // Variable to store the JSON data
+    fetchData();
+
+    // Event listener for tab click
+    document.querySelectorAll('.lboard_tabs .tabs ul li').forEach(tab => {
+        tab.addEventListener('click', function() {
+            const activeTab = document.querySelector('.lboard_tabs .tabs ul li.active');
+            activeTab.classList.remove('active');
+            this.classList.add('active');
+            const category = this.getAttribute('data-li');
+            const activeItem = document.querySelector('.lboard_item.active');
+            activeItem.classList.remove('active');
+            const newItem = document.querySelector(`.lboard_item.${category}`);
+            newItem.classList.add('active');
+            updateScores(category);
+        });
+    });
+</script>
+
+</body>
+</html>

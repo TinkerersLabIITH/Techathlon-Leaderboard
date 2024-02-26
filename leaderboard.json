@@ -1,0 +1,15 @@
+{
+    "today": [
+      {"name": "Charles John", "imgSrc": "pic_1.png", "points": "95%", "score": 195},
+      {"name": "Alex Mike", "imgSrc": "pic_2.png", "points": "80%", "score": 185}
+    ],
+    "month": [
+        {"name": "Charles John", "imgSrc": "pic_1.png", "points": "45%", "score": 2195},
+        {"name": "Alex Mike", "imgSrc": "pic_2.png", "points": "20%", "score": 1195}
+    ],
+    "year": [
+        {"name": "Charles John", "imgSrc": "pic_1.png", "points": "90%", "score": 2500},
+        {"name": "Alex Mike", "imgSrc": "pic_2.png", "points": "70%", "score": 1250}
+    ]
+  }
+  
