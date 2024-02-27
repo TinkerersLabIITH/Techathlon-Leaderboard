@@ -1,7 +1,7 @@
 var tabs = document.querySelectorAll(".lboard_tabs ul li");
-var today = document.querySelector(".today");
-var month = document.querySelector(".month");
-var year = document.querySelector(".year");
+var today = document.querySelector(".software");
+var month = document.querySelector(".total");
+var year = document.querySelector(".hardware");
 var items = document.querySelectorAll(".lboard_item");
 
 tabs.forEach(function(tab){
@@ -18,10 +18,10 @@ tabs.forEach(function(tab){
 			item.style.display = "none";
 		})
 
-		if(currenttab == "today"){
+		if(currenttab == "software"){
 			today.style.display = "block";
 		}
-		else if(currenttab == "month"){
+		else if(currenttab == "total"){
 			month.style.display = "block";
 		}
 		else{
