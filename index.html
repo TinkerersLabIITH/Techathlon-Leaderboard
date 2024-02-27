@@ -270,33 +270,86 @@
             height: 100%;
             z-index: -1;
         }
+        .animated-button {
+            display: flex;
+            margin-left:35vw ;
+            margin-right:35vw ;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            justify-content: center;
+        }
+
+        .animated-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.5s ease;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        .animated-button:hover::before {
+            width: 0;
+            height: 0;
+            opacity: 1;
+        }
+        .animated-button:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+        .animated-button span {
+            position: relative;
+            z-index: 1;
+        }
+
     </style>
 </head>
 
 <body>
-    <img src="Front High Res.png" style="width:20vw;margin: 20px 39vw; border-radius: 25px;" alt="">
+    <img src="Front_High_Res__1_-removebg.png" style="width:20vw;margin: 20px 39vw; border-radius: 25px;" alt="">
+    <a href="#" class="animated-button">
+        <span>Submit your Solutions Here</span>
+    </a>
+
     <h1 style="text-align: center; color: white; padding-top: 50px;font-size: 50px ; ">TL-Techathlon Leaderboard </h1>
     <div class="wrapper">
         <div class="lboard_section">
             <div class="lboard_tabs">
                 <div class="tabs">
                     <ul>
-                        <li data-li="software">Software</li>
-                        <li class="active" data-li="total">Total</li>
-                        <li data-li="hardware">Hardware</li>
+                        <li data-li="task1">Task-1</lix    >
+                        <li data-li="task2">Task-2</li>
+                        <li data-li="task3">Task-3</li>
+                        <li class="active" data-li="total">Cumulative Score</li>
                     </ul>
                 </div>
             </div>
 
             <div class="lboard_wrap" id="leaderboard">
-                <div class="lboard_item software"> <!-- For Software -->
-                    <!-- Leaderboard items for Software (today) -->
+                <div class="lboard_item task1"> 
+                    <!-- Leaderboard items for Task-1 -->
                 </div>
-                <div class="lboard_item total active"> <!-- For Hardware -->
-                    <!-- Leaderboard items for Hardware (month) -->
+                <div class="lboard_item task2"> 
+                    <!-- Leaderboard items for Task-2 -->
                 </div>
-                <div class="lboard_item hardware"> <!-- For Total -->
-                    <!-- Leaderboard items for Total (year) -->
+                <div class="lboard_item task3">
+                    <!-- Leaderboard items for Task-3-->
+                </div>
+                <div class="lboard_item total active"> 
+                    <!-- Leaderboard items for score -->
                 </div>
             </div>
         </div>
@@ -401,7 +454,7 @@
                     },
                     "move": {
                         "enable": true,
-                        "speed": 0.5,
+                        "speed": 3.6,
                         "direction": "none",
                         "random": false,
                         "straight": false,

@@ -1,7 +1,8 @@
 var tabs = document.querySelectorAll(".lboard_tabs ul li");
-var today = document.querySelector(".software");
-var month = document.querySelector(".total");
-var year = document.querySelector(".hardware");
+var task1 = document.querySelector(".task1");
+var task2 = document.querySelector(".task2");
+var task3 = document.querySelector(".task3");
+var total = document.querySelector(".total");
 var items = document.querySelectorAll(".lboard_item");
 
 tabs.forEach(function(tab){
@@ -18,14 +19,17 @@ tabs.forEach(function(tab){
 			item.style.display = "none";
 		})
 
-		if(currenttab == "software"){
-			today.style.display = "block";
+		if(currenttab == "task1"){
+			task1.style.display = "block";
 		}
-		else if(currenttab == "total"){
-			month.style.display = "block";
+		else if(currenttab == "task2"){
+			task2.style.display = "block";
+		}
+		else if(currenttab == "task3"){
+			task3.style.display = "block";
 		}
 		else{
-			year.style.display = "block";
+			total.style.display = "block";
 		}
 
 	})

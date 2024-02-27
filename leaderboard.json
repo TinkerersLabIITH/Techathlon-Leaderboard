@@ -1,15 +1,42 @@
 {
-    "software": [
-      {"name": "Chris Gale", "imgSrc": "pic_1.png", "points": "95%", "score": 195},
-      {"name": "Alex Mike", "imgSrc": "pic_2.png", "points": "80%", "score": 185}
-    ],
-    "hardware": [
-        {"name": "Sachin Tendulkar", "imgSrc": "pic_1.png", "points": "45%", "score": 2195},
-        {"name": "David Warner", "imgSrc": "pic_2.png", "points": "20%", "score": 1195}
-    ],
-    "total": [
-        {"name": "Virat Kohli", "imgSrc": "pic_1.png", "points": "90%", "score": 2500},
-        {"name": "Dhoni", "imgSrc": "pic_2.png", "points": "70%", "score": 1250}
-    ]
-  }
-  
+  "task1": [
+    {
+      "name": "Chris Gale",
+      "score": 95
+    },
+    {
+      "name": "Alex Mike",
+      "score": 90
+    }
+  ],
+  "task2": [
+    {
+      "name": "Alex Mike",
+      "score": 95
+    },
+    {
+      "name": "Chris Gale",
+      "score": 92
+    }
+  ],
+  "task3": [
+    {
+      "name": "Alex Mike",
+      "score": 94
+    },
+    {
+      "name": "Chris Gale",
+      "score": 93
+    }
+  ],
+  "total": [
+    {
+      "name": "Chris Gale",
+      "score": 280
+    },
+    {
+      "name": "Alex Mike",
+      "score": 279
+    }
+  ]
+}
