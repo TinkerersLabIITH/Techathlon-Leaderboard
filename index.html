@@ -270,10 +270,11 @@
             height: 100%;
             z-index: -1;
         }
+
         .animated-button {
             display: flex;
-            margin-left:35vw ;
-            margin-right:35vw ;
+            margin-left: 35vw;
+            margin-right: 35vw;
             padding: 10px 20px;
             background-color: #3498db;
             color: #fff;
@@ -307,14 +308,16 @@
             height: 0;
             opacity: 1;
         }
+
         .animated-button:hover {
-            transform: scale(1.1); /* Zoom effect on hover */
+            transform: scale(1.1);
+            /* Zoom effect on hover */
         }
+
         .animated-button span {
             position: relative;
             z-index: 1;
         }
-
     </style>
 </head>
 
@@ -330,7 +333,7 @@
             <div class="lboard_tabs">
                 <div class="tabs">
                     <ul>
-                        <li data-li="task1">Task-1</lix    >
+                        <li data-li="task1">Task-1</lix>
                         <li data-li="task2">Task-2</li>
                         <li data-li="task3">Task-3</li>
                         <li class="active" data-li="total">Cumulative Score</li>
@@ -339,16 +342,16 @@
             </div>
 
             <div class="lboard_wrap" id="leaderboard">
-                <div class="lboard_item task1"> 
+                <div class="lboard_item task1">
                     <!-- Leaderboard items for Task-1 -->
                 </div>
-                <div class="lboard_item task2"> 
+                <div class="lboard_item task2">
                     <!-- Leaderboard items for Task-2 -->
                 </div>
                 <div class="lboard_item task3">
                     <!-- Leaderboard items for Task-3-->
                 </div>
-                <div class="lboard_item total active"> 
+                <div class="lboard_item total active">
                     <!-- Leaderboard items for score -->
                 </div>
             </div>
@@ -454,7 +457,7 @@
                     },
                     "move": {
                         "enable": true,
-                        "speed": 3.6,
+                        "speed": 2,
                         "direction": "none",
                         "random": false,
                         "straight": false,
