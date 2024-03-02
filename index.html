@@ -368,15 +368,13 @@
             const lboardItem = document.querySelector(`.lboard_item.${category}`);
 
             // Check if lboardItem is null
-            //<h1>${entry.score} pts</h1>
-            // <h2>${index + 1}</h2>
             if (lboardItem) {
                 const filteredData = data[category]; // Filtered data based on category
                 const leaderboardHTML = filteredData.map((entry, index) => `
                 <div class="lboard_mem">
-                    
+                    <h2>${index + 1}</h2>
                     <h2 class="name_bar">${entry.name}</h2>
-                    
+                    <h1>${entry.score} pts</h1>
                 </div>
             `).join('');
 
