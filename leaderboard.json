@@ -1,33 +1,21 @@
 {
   "task1": [
     {
-      "name": "Chris Gale",
-      "score": 95
-    },
-    {
       "name": "Alex Mike",
       "score": 90
-    }
+    },
   ],
   "task2": [
     {
-      "name": "Alex Mike",
-      "score": 95
-    },
-    {
       "name": "Chris Gale",
       "score": 92
-    }
+    },
   ],
   "task3": [
     {
       "name": "Alex Mike",
       "score": 94
     },
-    {
-      "name": "Chris Gale",
-      "score": 93
-    }
   ],
   "total": [
     {
