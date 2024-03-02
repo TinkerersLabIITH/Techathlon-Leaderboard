@@ -368,20 +368,36 @@
             const lboardItem = document.querySelector(`.lboard_item.${category}`);
 
             // Check if lboardItem is null
-            if (lboardItem) {
-                const filteredData = data[category]; // Filtered data based on category
-                const leaderboardHTML = filteredData.map((entry, index) => `
-                <div class="lboard_mem">
-                    <h2>${index + 1}</h2>
-                    <h2 class="name_bar">${entry.name}</h2>
-                    <h1>${entry.score} pts</h1>
-                </div>
-            `).join('');
+//             if (lboardItem) {
+//     const filteredData = data[category]; // Filtered data based on category
+//     const leaderboardHTML = filteredData.map((entry, index) => `
+//         <div class="lboard_mem">
+//             <h2>${index + 1}</h2>
+//             <h2 class="name_bar">${entry.name}</h2>
+//             <h1>${entry.score !== 0 ? `${entry.score} pts` : `${entry.score}`}</h1>
+//         </div>
+//     `).join('');
 
-                lboardItem.innerHTML = leaderboardHTML;
-            } else {
-                console.error('Error: Cannot find leaderboard item for category:', category);
-            }
+//     lboardItem.innerHTML = leaderboardHTML;
+// } else {
+//     console.error('Error: Cannot find leaderboard item for category:', category);
+// }
+if (lboardItem) {
+    const filteredData = data[category].filter(entry => entry.score !== 0); // Filter out entries with score 0
+    const leaderboardHTML = filteredData.map((entry, index) => `
+        <div class="lboard_mem">
+            <h2>${index + 1}</h2>
+            <h2 class="name_bar">${entry.name}</h2>
+            <h1>${entry.score} pts</h1>
+        </div>
+    `).join('');
+
+    lboardItem.innerHTML = leaderboardHTML;
+} else {
+    console.error('Error: Cannot find leaderboard item for category:', category);
+}
+
+
         }
 
         // Function to fetch data for a category
