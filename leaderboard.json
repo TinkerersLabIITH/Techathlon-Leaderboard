@@ -1,25 +1,25 @@
 {
   "task1": [
     {
-      "name": "Points will be displayed once the Task-1 is evalutaed!",
+      "name": "Points will be displayed once the Task-1 is evaluated!",
       "score": 0
     }
   ],
   "task2": [
     {
-      "name": "Points will be displayed once the Task-2 is evalutaed!",
+      "name": "Points will be displayed once the Task-2 is evaluated!",
       "score": 0
     }
   ],
   "task3": [
     {
-      "name": "Points will be displayed once the Task-3 is evalutaed!",
+      "name": "Points will be displayed once the Task-3 is evaluated!",
       "score": 0
     }
   ],
   "total": [
     {
-      "name": "Overall Points will be displayed once ALL the Tasks are evalutaed!",
+      "name": "Overall Points will be displayed once ALL the Tasks are evaluated!",
       "score": 0
     }
   ]
